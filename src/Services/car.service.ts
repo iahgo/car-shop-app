@@ -42,7 +42,7 @@ export default class CarsService {
   }
 
   public async updateCar(id: string, car: ICar): Promise<IHttpResponse<Car | string>> {
-    const updatedCar = await this.carOdm.updateCar(id, car);
+    const updatedCar = await this.carOdm.update(id, car);
 
     if (updatedCar === null) return badRequest('Car not found');
 
